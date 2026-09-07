@@ -1,0 +1,16 @@
+#slide-08 .recap-intro { position: absolute; left: 88px; top: 320px; width: 580px; }
+#slide-08 .recap-qis { display: block; width: 180px; height: 180px; object-fit: contain; }
+#slide-08 .recap-intro h2 { font-size: 39px; font-weight: 600; letter-spacing: -1px; margin: 20px 0; line-height: 1.2; }
+#slide-08 .recap-intro p { width: 460px; color: var(--muted); font-size: 25px; line-height: 1.5; }
+#slide-08 .recap-symbol { position: absolute; top: 52px; left: 410px; width: 118px; height: 118px; display: grid; place-items: center; border: 1px solid #b9d1bd; border-radius: 50%; color: #80a38a; }
+#slide-08 .recap-symbol > .line-icon { width: 55px; height: 55px; }
+#slide-08 .recap-actions { position: absolute; left: 785px; top: 280px; right: 88px; margin: 0; padding: 0; list-style: none; }
+#slide-08 .recap-actions li { display: flex; align-items: center; gap: 28px; border-bottom: 1px solid var(--line); padding: 25px 0; }
+#slide-08 .recap-actions li > span { font-size: 23px; color: #7a9786; font-weight: 300; }
+#slide-08 .recap-actions h2 { font-size: 34px; font-weight: 600; letter-spacing: -.7px; margin: 0 0 7px; }
+#slide-08 .recap-actions p { margin: 0; color: var(--muted); font-size: 22px; }
+#slide-08 .recap-actions .line-icon { margin-left: auto; color: var(--green); }
+#slide-08 .recap-banner { position: absolute; left: 88px; right: 88px; top: 818px; height: 135px; display: flex; align-items: center; justify-content: space-between; padding: 28px 42px; background: var(--green); color: white; border-radius: 15px; }
+#slide-08 .recap-banner p { font-size: 30px; line-height: 1.35; margin: 0; }
+#slide-08 .recap-banner strong { color: #b6efa7; font-weight: 600; }
+#slide-08 .recap-banner > span { font-size: 20px; line-height: 1.6; color: #d1e8d4; letter-spacing: .6px; }

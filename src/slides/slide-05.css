@@ -1,0 +1,25 @@
+#slide-05 .subscription-policy { position: absolute; left: 88px; top: 333px; width: 1000px; }
+#slide-05 .policy-heading { display: flex; align-items: center; gap: 22px; margin-bottom: 28px; }
+#slide-05 .policy-heading > .line-icon { width: 45px; height: 45px; color: var(--green); }
+#slide-05 .policy-heading h2 { font-size: 36px; font-weight: 600; letter-spacing: -.8px; margin: 8px 0 0; }
+#slide-05 .policy-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+#slide-05 .policy-g2s, #slide-05 .policy-others { min-height: 280px; padding: 30px; border-radius: 18px; }
+#slide-05 .policy-g2s { background: #e3eee3; }
+#slide-05 .policy-others { background: white; border: 1px solid var(--line); }
+#slide-05 .policy-cards h3 { font-size: 33px; line-height: 1.2; letter-spacing: -.8px; font-weight: 600; margin: 22px 0; }
+#slide-05 .policy-cards p { font-size: 23px; line-height: 1.45; margin: 0; color: var(--muted); }
+#slide-05 .policy-manager { display: flex; align-items: center; gap: 20px; margin-top: 30px; padding-top: 27px; border-top: 1px solid var(--line); }
+#slide-05 .policy-manager > .line-icon { color: var(--green); }
+#slide-05 .policy-manager p { font-size: 22px; line-height: 1.5; margin: 0; color: var(--muted); }
+#slide-05 .policy-manager strong { color: var(--ink); font-weight: 600; }
+#slide-05 .notification-choice { position: absolute; left: 1165px; top: 333px; width: 667px; min-height: 488px; padding: 37px; border-radius: 20px; border: 1px solid #cddfcf; background: #e6efe5; }
+#slide-05 .notification-choice .icon-tile { float: right; background: #d4e5d3; }
+#slide-05 .notification-choice h2 { font-size: 39px; line-height: 1.2; letter-spacing: -.8px; font-weight: 600; margin: 28px 0 22px; }
+#slide-05 .notification-choice p { font-size: 24px; line-height: 1.5; margin: 0 0 22px; color: var(--muted); }
+#slide-05 .notification-options { display: flex; align-items: center; gap: 17px; margin: 25px 0; }
+#slide-05 .notification-options > span { display: inline-flex; align-items: center; gap: 10px; padding: 12px 19px; background: white; border: 1px solid #c4d7c6; border-radius: 30px; font-size: 21px; }
+#slide-05 .notification-options .line-icon { width: 25px; height: 25px; }
+#slide-05 .notification-choice .independent-channels { border-top: 1px solid #c6dac9; padding-top: 23px; font-size: 21px; margin: 0; }
+#slide-05 .independent-channels strong { color: var(--green); font-weight: 600; }
+#slide-05 .subscription-takeaway { position: absolute; left: 88px; right: 88px; top: 885px; margin: 0; font-size: 29px; text-align: center; }
+#slide-05 .subscription-takeaway > span { color: var(--orange); font-size: 38px; margin: 0 16px; vertical-align: -2px; }

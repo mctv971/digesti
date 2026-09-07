@@ -1,0 +1,152 @@
+#slide-01 {
+  --qis-white: #f7fbf8;
+  --qis-lime: #a2f8a3;
+  overflow: hidden;
+  color: var(--qis-white);
+  background:
+    radial-gradient(ellipse at 61% -20%, #11825870, transparent 61%),
+    radial-gradient(ellipse at 65% 115%, #00734b60, transparent 65%),
+    linear-gradient(120deg, #056449, #006343 60%, #086b4d);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+#slide-01 .qis-halo {
+  position: absolute;
+  left: 1248px;
+  top: -90px;
+  width: 1390px;
+  height: 1280px;
+  border: 1px solid #abe9ce38;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 55% 0%, #80d4ada6, #47b58b22 38%, #328c7008 65%);
+  transform: rotate(-17deg);
+}
+
+#slide-01 .qis-eyebrow {
+  position: absolute;
+  left: 94px;
+  top: 118px;
+  margin: 0;
+  color: #d3e8db;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 7px;
+}
+
+#slide-01 .qis-accent {
+  position: absolute;
+  left: 98px;
+  top: 270px;
+  width: 97px;
+  height: 11px;
+  border-radius: 10px;
+  background: var(--qis-lime);
+}
+
+#slide-01 .qis-title {
+  position: absolute;
+  z-index: 1;
+  left: 94px;
+  top: 385px;
+  margin: 0;
+  font-size: 108px;
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -2.5px;
+  white-space: nowrap;
+}
+
+#slide-01 .qis-title span {
+  color: var(--qis-lime);
+  margin-right: 4px;
+  font-size: 120px;
+  line-height: 0;
+  letter-spacing: -1px;
+}
+
+#slide-01 .qis-subtitle {
+  position: absolute;
+  left: 97px;
+  top: 564px;
+  margin: 0;
+  font-size: 57px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: .5px;
+}
+
+#slide-01 .qis-topics {
+  position: absolute;
+  left: 98px;
+  top: 661px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 37px;
+  font-weight: 350;
+  line-height: 1.4;
+  letter-spacing: 1.4px;
+  white-space: nowrap;
+}
+
+#slide-01 .qis-topics li + li {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+#slide-01 .qis-topics li + li::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--qis-lime);
+}
+
+#slide-01 .qis-compass {
+  position: absolute;
+  left: 1420px;
+  top: 273px;
+  width: 440px;
+  height: 440px;
+}
+
+#slide-01 .qis-compass-needle,
+#slide-01 .qis-compass-orbit {
+  transform-box: view-box;
+  transform-origin: 220px 220px;
+}
+
+#slide-01 .qis-signature {
+  position: absolute;
+  left: 97px;
+  top: 892px;
+  margin: 0;
+  color: #e3efe7;
+  font-size: 24px;
+  font-weight: 350;
+  line-height: 1.6;
+  letter-spacing: 7.6px;
+  text-transform: uppercase;
+}
+
+#slide-01 .qis-signature::before {
+  position: absolute;
+  top: -37px;
+  left: 1px;
+  width: 97px;
+  height: 2px;
+  background: #a4c9b6b0;
+  content: "";
+}
+
+#slide-01 .qis-logo {
+  position: absolute;
+  right: 45px;
+  bottom: 50px;
+  width: 201px;
+  height: auto;
+}
