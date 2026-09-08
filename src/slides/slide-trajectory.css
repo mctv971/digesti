@@ -1,0 +1,24 @@
+#slide-trajectory { --timeline-green: #2b6d50; --timeline-orange: #ce8b23; }
+#slide-trajectory .trajectory-track { position: absolute; top: 801px; left: 135px; width: 1640px; height: 7px; border-radius: 10px; background: #d5dfd9; transform-origin: left center; }
+#slide-trajectory .trajectory-progress { display: block; height: 100%; width: 560px; border-radius: inherit; background: var(--timeline-green); transform-origin: left center; }
+#slide-trajectory .trajectory-milestones { list-style: none; margin: 0; padding: 0; }
+#slide-trajectory .milestone { position: absolute; left: var(--x); top: 805px; width: 0; height: 0; color: #657b70; }
+#slide-trajectory .milestone-stem { position: absolute; width: 5px; height: var(--stem); bottom: 0; left: -2.5px; background: #dae4dd; transform-origin: center bottom; }
+#slide-trajectory .milestone-dot { position: absolute; width: 44px; height: 44px; top: -22px; left: -22px; border-radius: 50%; background: #d0ddd5; }
+#slide-trajectory .milestone-copy { position: absolute; bottom: calc(var(--stem) + 17px); left: -151px; width: 302px; height: 116px; text-align: center; }
+#slide-trajectory .milestone-copy h2 { margin: 0 0 23px; color: inherit; font-size: 25px; line-height: 1.25; font-weight: 700; }
+#slide-trajectory .milestone-copy p { margin: 0; color: inherit; font-size: 21px; line-height: 1.45; }
+#slide-trajectory .milestone-today { color: #8c641f; }
+#slide-trajectory .milestone-today h2 { color: #bc7b19; }
+#slide-trajectory .milestone-today .milestone-stem, #slide-trajectory .milestone-today .milestone-dot { background: var(--timeline-orange); }
+#slide-trajectory .milestone-today .milestone-dot, #slide-trajectory .milestone-production .milestone-dot { width: 62px; height: 62px; left: -31px; top: -31px; box-shadow: 0 0 0 7px #f5f6f2; }
+#slide-trajectory .milestone-halo { position: absolute; left: -37px; top: -37px; width: 74px; height: 74px; border: 2px solid var(--timeline-orange); border-radius: 50%; opacity: 0; }
+#slide-trajectory .today-label { position: absolute; left: -135px; top: 55px; width: 270px; padding: 14px 20px; border-radius: 30px; background: var(--timeline-orange); color: white; text-align: center; font-size: 18px; font-weight: 750; letter-spacing: .7px; text-transform: uppercase; }
+#slide-trajectory .milestone-production { color: var(--timeline-green); }
+#slide-trajectory .milestone-production .milestone-copy p { font-weight: 600; }
+#slide-trajectory .milestone-production .milestone-stem, #slide-trajectory .milestone-production .milestone-dot { background: var(--timeline-green); }
+#slide-trajectory .production-group { position: absolute; left: 1163px; top: 842px; width: 364px; text-align: center; color: var(--timeline-green); }
+#slide-trajectory .production-bracket { display: block; width: 100%; height: 29px; border: 5px solid currentColor; border-top: 0; }
+#slide-trajectory .production-group p { margin: 19px 0 0; font-size: 20px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
+#slide-trajectory .production-products { display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; }
+#slide-trajectory .production-products img { display: block; width: 142px; height: 30px; object-fit: contain; }

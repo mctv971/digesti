@@ -1,4 +1,4 @@
-import { asset, header, footer, icon, presentSteps } from './shared.js';
+import { qisLogo, asset, header, footer, icon, presentSteps } from './shared.js';
 import './slide-02.css';
 
 let cleanup;
@@ -13,7 +13,7 @@ export const slide02 = {
       <div class="mail-card mail-three">${icon('mail')}<div><strong>La météo du matin</strong><span>État des TP et des batchs</span></div><i></i></div>
     </div>
     <svg class="converging-lines" viewBox="0 0 1920 1080" aria-hidden="true"><path d="M638 448C810 448 790 557.5 1030 557.5M680 581C830 581 850 557.5 1030 557.5M638 720C820 720 790 557.5 1030 557.5"/><path class="line-arrow" d="m1015 545.5 15 12-15 12"/></svg>
-    <div class="qis-destination"><div class="platform-top"><span class="small-label">Votre point de repère</span>${icon('grid')}</div><div class="platform-identity"><img class="platform-logo" src="${asset('logo-qis.png')}" alt="QIS — Qualité Infos Services" /><p>Une plateforme.<br />Mes informations QdS.</p></div><div class="platform-modules"><span>${icon('mail')} Communications</span><span>${icon('weather')} Météo des SI</span><span><img class="perception-logo" src="${asset('logo-perception.svg')}" alt="Perception+" /></span></div></div>
+    <div class="qis-destination"><div class="platform-top"><span class="small-label">Votre point de repère</span>${icon('grid')}</div><div class="platform-identity"><img class="platform-logo" src="${qisLogo}" alt="QIS — Qualité Infos Services" /><p>Une plateforme.<br />Mes informations QdS.</p></div><div class="platform-modules"><span>${icon('mail')} Communications</span><span>${icon('weather')} Météo des SI</span><span><img class="perception-logo" src="${asset('logo-perception.svg')}" alt="Perception+" /></span></div></div>
     <div class="why-takeaway"><span class="takeaway-mark"></span><p class="why-message">Des listes figées.<br /><strong>Une information à retrouver.</strong></p><p class="why-secondary">Ciblage perfectible<br />Personnalisation limitée</p></div>
     ${footer(2)}
   `,

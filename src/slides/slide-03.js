@@ -1,4 +1,4 @@
-import { asset, header, footer, icon, presentSteps } from './shared.js';
+import { qisLogo, asset, header, footer, icon, presentSteps } from './shared.js';
 import './slide-03.css';
 
 let cleanup;
@@ -10,7 +10,7 @@ export const slide03 = {
     <div class="source-node source-iq"><div class="icon-tile">${icon('user')}</div><div><span class="small-label">Communications</span><h2>Équipe IQ</h2><p>Crée les communications QdS</p></div></div>
     <div class="source-node source-weather"><div class="icon-tile">${icon('weather')}</div><div><span class="small-label">Météo des SI</span><h2>États TP & batchs</h2><p>Donnent la situation quotidienne</p></div></div>
     <div class="source-node source-perception"><div class="icon-tile">${icon('user')}</div><div><p class="perception-input">Les entités saisissent leur ressenti dans</p><img class="perception-logo" src="${asset('logo-perception.svg')}" alt="Perception+" /></div></div>
-    <div class="flow-platform"><img src="${asset('logo-qis.png')}" alt="QIS — Qualité Infos Services" /><span>Centralise l’information</span></div>
+    <div class="flow-platform"><img src="${qisLogo}" alt="QIS — Qualité Infos Services" /><span>Centralise l’information</span></div>
     <div class="flow-subscriber"><div class="icon-tile">${icon('user')}</div><span class="small-label">Mon rôle</span><h2>Abonné</h2><p>Je consulte les informations<br />de mes périmètres.</p></div>
     <span class="access-label">Selon mes abonnements</span>
     <div class="flow-caption" aria-live="polite"></div>

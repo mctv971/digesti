@@ -1,4 +1,6 @@
 #slide-07 .capture img { transform-origin: right top; }
-#slide-07 .weather-focus { left: 323px; top: 49px; width: 307px; height: 180px; }
-#slide-07 .weather-focus.weather-blocks { left: 343px; top: 31px; width: 896px; height: 176px; }
+#slide-07 .weather-error img { width: 112.55%; height: 108.96%; left: -12.55%; top: -8.96%; }
+#slide-07 .weather-focus { left: 317px; top: 61px; width: 311px; height: 167px; }
+#slide-07 .weather-focus.weather-blocks { left: 322px; top: 31px; width: 917px; height: 290px; }
+#slide-07 .weather-focus.weather-impact { left: 390px; top: 85px; width: 845px; height: 236px; }
 #slide-07 .demo-note { font-size: 21px; }

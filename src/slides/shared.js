@@ -1,4 +1,8 @@
 import './shared.css';
+export { default as qisLogo } from '../../SOURCE/logoQIS.jpg?url';
+
+// Vite suit les fichiers SOURCE : une capture remplacée est aussi actualisée en dev.
+const screenshots = import.meta.glob('../../SOURCE/screenQIS/*.png', { eager: true, query: '?url', import: 'default' });
 
 export const asset = (name) => `${import.meta.env.BASE_URL}assets/${name}`;
 
@@ -28,7 +32,7 @@ export function footer(number) {
       <span class="step-dots" aria-hidden="true"></span>
       <button class="next-button" data-next>Continuer ${icon('arrow')}</button>
       <span class="keyboard-hint">← → / Espace</span>
-    </nav><span class="slide-counter">${String(number).padStart(2, '0')} / 08</span>
+    </nav><span class="slide-counter">${String(number).padStart(2, '0')}</span>
     <img class="footer-logo" src="${asset('logo-g2s-couleur.svg')}" alt="G2S" />
   </footer>`;
 }
@@ -53,7 +57,7 @@ export function laptop(content, label) {
 }
 
 export function capture(file, alt, classes = 'crop-app') {
-  return `<div class="capture ${classes}"><img src="${asset(`qis/${file}`)}" alt="${alt}" draggable="false" /></div>`;
+  return `<div class="capture ${classes}"><img src="${screenshots[`../../SOURCE/screenQIS/${file}`]}" alt="${alt}" draggable="false" /></div>`;
 }
 
 // Les quelques éléments répétés des démonstrations partagent le même lifecycle.

@@ -106,20 +106,6 @@
   background: var(--qis-lime);
 }
 
-#slide-01 .qis-compass {
-  position: absolute;
-  left: 1420px;
-  top: 273px;
-  width: 440px;
-  height: 440px;
-}
-
-#slide-01 .qis-compass-needle,
-#slide-01 .qis-compass-orbit {
-  transform-box: view-box;
-  transform-origin: 220px 220px;
-}
-
 #slide-01 .qis-signature {
   position: absolute;
   left: 97px;

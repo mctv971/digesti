@@ -1,8 +1,11 @@
+import { compass, animateCompass } from "./compass.js";
+
 export function createDeck(stage, slides) {
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let index = -1;
   let element;
   let context;
+  let cleanupCompass;
 
   function indexFromHash() {
     const hash = window.location.hash;
@@ -20,6 +23,7 @@ export function createDeck(stage, slides) {
 
   function leave() {
     if (index < 0) return;
+    cleanupCompass?.();
     slides[index].exit?.(context);
     element.remove();
   }
@@ -30,11 +34,14 @@ export function createDeck(stage, slides) {
     element.id = slide.id;
     element.className = 'slide';
     element.setAttribute('aria-label', `Slide ${index + 1} sur ${slides.length}`);
-    element.innerHTML = slide.render();
+    element.innerHTML = slide.render() + compass();
     stage.append(element);
     // Le DOM est recréé à chaque entrée pour repartir d'un état propre.
     context = { element, reducedMotion: motion.matches, next, prev };
     slide.enter?.(context);
+    cleanupCompass = animateCompass(element, motion.matches);
+    const counter = element.querySelector(".slide-counter");
+    if (counter) counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
   }
 
   function goTo(target) {
