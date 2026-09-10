@@ -5,12 +5,12 @@ let cleanup;
 export const slide07 = {
   id: 'slide-07',
   render: () => `
-    ${header(7, 'Météo des SI', 'Chaque matin, <em>un état des lieux.</em>')}
+    ${header(8, 'Météo des SI', 'Chaque matin, <em>un état des lieux.</em>')}
     ${journey(1, 'TP & batchs')}
     <aside class="demo-copy"><span class="demo-number"></span><h2></h2><p></p><div class="demo-note"></div></aside>
     ${laptop(`${capture('qis_meteo.png', 'Météo du 1er septembre 2026 : batchs OK, 4 blocs sur 4 pour BOAGDE / SIBOGAN et 24 sur 24 pour V360 / SIVISION.', 'crop-app weather-normal')}${capture('qis_meteo_error.png', 'Exemple du 10 mars 2026 : cinq anomalies. Les gestionnaires renseignent impact et actions pour les batchs en erreur.', 'weather-error')}<div class="screen-focus weather-focus" hidden></div>`, 'Météo SI')}
     <p class="topic-note"></p>
-    ${footer(7)}
+    ${footer(8)}
   `,
   enter(context) {
     const el = context.element;

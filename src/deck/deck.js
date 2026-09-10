@@ -6,6 +6,7 @@ export function createDeck(stage, slides) {
   let element;
   let context;
   let cleanupCompass;
+  let paginationEvents;
 
   function indexFromHash() {
     const hash = window.location.hash;
@@ -24,6 +25,7 @@ export function createDeck(stage, slides) {
   function leave() {
     if (index < 0) return;
     cleanupCompass?.();
+    paginationEvents?.abort();
     slides[index].exit?.(context);
     element.remove();
   }
@@ -40,8 +42,40 @@ export function createDeck(stage, slides) {
     context = { element, reducedMotion: motion.matches, next, prev };
     slide.enter?.(context);
     cleanupCompass = animateCompass(element, motion.matches);
-    const counter = element.querySelector(".slide-counter");
-    if (counter) counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+    setupPagination();
+  }
+
+  function setupPagination() {
+    const form = element.querySelector('.slide-counter');
+    if (!form) return;
+    paginationEvents = new AbortController();
+    const options = { signal: paginationEvents.signal };
+    const input = form.querySelector('.slide-number');
+    const reset = () => {
+      input.value = String(index + 1).padStart(2, '0');
+      input.setCustomValidity('');
+    };
+    reset();
+    input.setAttribute('aria-label', `Numéro de slide, de 1 à ${slides.length}`);
+    form.querySelector('.slide-total').textContent = `/ ${String(slides.length).padStart(2, '0')}`;
+    input.addEventListener('focus', () => input.select(), options);
+    input.addEventListener('input', () => input.setCustomValidity(''), options);
+    input.addEventListener('blur', reset, options);
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') { reset(); input.blur(); }
+    }, options);
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = input.value.trim();
+      const target = Number(value);
+      if (!/^\d+$/.test(value) || !Number.isSafeInteger(target) || target < 1 || target > slides.length) {
+        input.setCustomValidity(`Saisissez un numéro entre 1 et ${slides.length}.`);
+        input.reportValidity();
+        return;
+      }
+      input.blur();
+      goTo(target - 1);
+    }, options);
   }
 
   function goTo(target) {

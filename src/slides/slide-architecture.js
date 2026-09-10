@@ -5,7 +5,7 @@ let cleanup;
 export const slideArchitecture = {
   id: 'slide-architecture',
   render: () => `
-    ${header(9, 'Architecture & démarche projet', 'Une solution construite avec vous,<br /><em>sur des technologies Microsoft</em>')}
+    ${header(4, 'Architecture & démarche projet', 'Une solution construite avec vous,<br /><em>sur des technologies Microsoft</em>')}
     <section class="architecture-stack" aria-labelledby="stack-title">
       <h2 id="stack-title" class="small-label">Socle technologique</h2>
       <div class="technology-row">
@@ -26,13 +26,13 @@ export const slideArchitecture = {
       </ol>
     </section>
     <p class="architecture-takeaway">Les utilisateurs sont impliqués tout au long du projet afin de construire une solution adaptée aux besoins réels et de l’améliorer progressivement.</p>
-    ${footer(9)}
+    ${footer(4)}
   `,
   enter(context) {
     const cards = [...context.element.querySelectorAll('.project-step')];
     const stride = cards[0].offsetWidth + 18;
     const takeaway = context.element.querySelector('.architecture-takeaway');
-    cleanup = presentSteps(context, ['Concevoir', 'Construire', 'Tester ensemble', 'Déployer & améliorer', 'Voir la trajectoire'], async ({ step, animate, play }) => {
+    cleanup = presentSteps(context, ['Concevoir', 'Construire', 'Tester ensemble', 'Déployer & améliorer', 'Consulter les communications'], async ({ step, animate, play }) => {
       const offset = (cards.length - step - 1) * stride / 2;
       const target = `translateX(${offset}px)`;
       const incoming = cards[step];

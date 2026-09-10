@@ -37,8 +37,10 @@
 .step-dots { display: flex; gap: 7px; }
 .step-dots i { width: 6px; height: 6px; border-radius: 8px; background: #c6d5cb; }
 .step-dots i.active { background: var(--green); width: 19px; }
-.keyboard-hint { color: var(--muted); font-size: 14px; margin-left: 5px; }
-.slide-counter { margin: 0 45px; font-size: 16px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.slide-counter { display: flex; align-items: center; gap: 5px; margin: 0 35px; font-size: 16px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.slide-number { width: 44px; height: 40px; padding: 0 4px; border: 1px solid transparent; border-bottom-color: #b9cdc0; border-radius: 5px; background: transparent; color: var(--green); font: inherit; font-weight: 600; text-align: center; }
+.slide-number:hover { border-color: #b9cdc0; background: var(--mint); }
+.slide-number:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; background: white; }
 .footer-logo { width: 106px; height: 58px; object-fit: contain; }
 
 .journey { position: absolute; top: 219px; left: 88px; right: 88px; display: flex; align-items: center; gap: 0; margin: 0; padding: 17px 0; list-style: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }

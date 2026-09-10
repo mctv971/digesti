@@ -6,7 +6,11 @@
 #slide-04 .incident-cycle span { font-size: 19px; color: var(--muted); }
 #slide-04 .incident-cycle b { font-size: 20px; font-weight: 600; color: #8d5a16; padding: 8px 13px; background: #f9ebcd; margin-left: -14px; border-radius: 5px; }
 
-#slide-04 .open-qis { left: 1026px; top: 239px; width: 120px; height: 44px; display: flex; align-items: center; gap: 5px; padding: 2px; background: white; border-radius: 3px; text-align: left; color: #444; }
+#slide-04 .open-qis { left: 1026px; top: 258px; width: 120px; height: 34px; display: flex; align-items: center; gap: 5px; padding: 2px; background: white; border-radius: 3px; text-align: left; color: #444; }
 #slide-04 .open-qis[hidden] { display: none; }
-#slide-04 .open-qis img { width: 34px; height: 38px; object-fit: contain; }
+#slide-04 .open-qis img { width: 28px; height: 28px; object-fit: contain; }
 #slide-04 .open-qis span { font: 700 10px/1.35 Arial, sans-serif; }
+
+#slide-04 .connect-portal { position: absolute; inset: 0; transform-origin: right top; transform: translateY(0) scale(1); }
+#slide-04 .connect-portal[hidden] { display: none; }
+#slide-04 .eye-icon { display: inline-block; width: 25px; height: 25px; vertical-align: -.2em; flex: none; }

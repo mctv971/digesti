@@ -31,8 +31,10 @@ export function footer(number) {
       <button class="back-button" data-prev aria-label="Étape précédente">←</button>
       <span class="step-dots" aria-hidden="true"></span>
       <button class="next-button" data-next>Continuer ${icon('arrow')}</button>
-      <span class="keyboard-hint">← → / Espace</span>
-    </nav><span class="slide-counter">${String(number).padStart(2, '0')}</span>
+    </nav><form class="slide-counter" aria-label="Accès direct à une slide" novalidate>
+      <input class="slide-number" type="text" inputmode="numeric" value="${String(number).padStart(2, '0')}" aria-label="Numéro de slide" title="Numéro de slide — Entrée pour accéder" autocomplete="off" />
+      <span class="slide-total"></span>
+    </form>
     <img class="footer-logo" src="${asset('logo-g2s-couleur.svg')}" alt="G2S" />
   </footer>`;
 }

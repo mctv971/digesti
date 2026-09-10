@@ -6,7 +6,7 @@ let cleanup;
 export const slideTrajectory = {
   id: 'slide-trajectory',
   render: () => `
-    ${header(10, 'Trajectoire 2026 — 2027', 'QIS — <em>Trajectoire et jalons</em>')}
+    ${header(13, 'Trajectoire 2026 — 2027', 'QIS — <em>Trajectoire et jalons</em>')}
     <div class="trajectory-track" aria-hidden="true"><span class="trajectory-progress"></span></div>
     <ol class="trajectory-milestones" aria-label="Jalons de la trajectoire QIS">
       <li class="milestone" style="--x:175px; --stem:128px"><div class="milestone-copy"><h2>Mars — Juin 2026</h2><p>Story mapping, MVP<br />et développements Lot 1</p></div><span class="milestone-stem" aria-hidden="true"></span><span class="milestone-dot" aria-hidden="true"></span></li>
@@ -18,7 +18,7 @@ export const slideTrajectory = {
       <li class="milestone" style="--x:1735px; --stem:128px"><div class="milestone-copy"><h2>2027</h2><p>Lot 2 — enrichissements<br />et industrialisation</p></div><span class="milestone-stem" aria-hidden="true"></span><span class="milestone-dot" aria-hidden="true"></span></li>
     </ol>
     <div class="production-group"><span class="production-bracket" aria-hidden="true"></span><p>Mise en production</p></div>
-    ${footer(10)}
+    ${footer(13)}
   `,
   enter(context) {
     const el = context.element;

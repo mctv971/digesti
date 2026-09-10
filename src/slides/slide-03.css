@@ -3,8 +3,7 @@
 #slide-03 .source-iq { top: 330px; }
 #slide-03 .source-weather { top: 509px; }
 #slide-03 .source-perception { top: 688px; }
-#slide-03 .perception-input { max-width: 340px; }
-#slide-03 .perception-logo { display: block; width: 220px; height: 44px; object-fit: contain; margin-top: 10px; }
+#slide-03 .perception-logo { display: block; width: 142px; height: 24px; object-fit: contain; object-position: left center; }
 #slide-03 .source-node h2 { font-size: 31px; margin: 8px 0 6px; font-weight: 650; letter-spacing: -.5px; }
 #slide-03 .source-node p { margin: 0; font-size: 21px; color: var(--muted); }
 #slide-03 .flow-platform { position: absolute; left: 843px; top: 452px; width: 300px; height: 267px; border: 2px solid var(--green); border-radius: 27px; background: white; color: var(--green); display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 17px 40px #16563b18; }
