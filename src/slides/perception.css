@@ -51,16 +51,15 @@
 .perception-annotation-arrows > path { fill: none; stroke: #568975; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#perception-arrowhead); filter: drop-shadow(0 1px 1px white); }
 .perception-annotation-arrows marker path { fill: none; stroke: #568975; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .perception-annotations { margin: 0; padding: 0; list-style: none; }
-.perception-annotations li { position: absolute; width: 292px; padding: 21px 19px 20px; border: 1px solid var(--line); border-radius: 13px; background: white; }
+.perception-annotations li { position: absolute; width: 292px; padding: 21px 19px 20px; border: 1px solid var(--line); border-radius: 13px; background: white; transform: translateY(-50%); }
 .perception-annotations li > span { position: absolute; top: -15px; left: 19px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--perception-yellow); color: var(--ink); font-size: 16px; font-weight: 650; }
 .perception-annotations h2 { margin: 0 0 12px; font-size: 25px; line-height: 1.15; letter-spacing: -.4px; font-weight: 650; }
 .perception-annotations p { margin: 0; font-size: 21px; line-height: 1.4; color: var(--muted); }
-.perception-annotations strong { display: block; padding-top: 15px; margin-top: 15px; border-top: 1px solid var(--line); font-size: 20px; line-height: 1.35; color: var(--green); }
-.annotation-period { left: 88px; top: 347px; }
-.annotation-incidents { left: 88px; top: 620px; }
-.annotation-day { right: 88px; top: 347px; }
-.annotation-process { right: 88px; top: 565px; }
-.annotation-comment { right: 88px; top: 787px; }
+.annotation-period { left: 88px; top: 424px; }
+.annotation-incidents { left: 88px; top: 733px; }
+.annotation-day { right: 88px; top: 437px; }
+.annotation-process { right: 88px; top: 642px; }
+.annotation-comment { right: 88px; top: 845px; }
 .slide[id^="slide-perception-"] .demo-copy h2 { font-size: 39px; }
 .slide[id^="slide-perception-"] .demo-copy > p { font-size: 23px; line-height: 1.45; }
 .slide[id^="slide-perception-"] .demo-note { font-size: 20px; line-height: 1.45; }

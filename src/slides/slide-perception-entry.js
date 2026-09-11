@@ -17,11 +17,11 @@ export const slidePerceptionEntry = {
       <path d="M1532 845H1420" />
     </svg>
     <ol class="perception-annotations">
-      <li class="annotation-period"><span>1</span><h2>Ma caisse,<br />ma période</h2><p>Je ne vois et ne renseigne que la période ouverte de ma caisse.</p></li>
-      <li class="annotation-incidents"><span>2</span><h2>Les incidents vécus</h2><p>Je sélectionne les incidents proposés et précise le processus, le niveau d’impact et le nombre de personnes touchées.</p><strong>L’outil ne saisit pas à ma place.</strong></li>
-      <li class="annotation-day"><span>3</span><h2>Le ressenti du jour</h2><p>Du jeudi au mercredi, je choisis un jour et renseigne sa météo.</p></li>
-      <li class="annotation-process"><span>4</span><h2>La météo métier</h2><p>J’exprime mon ressenti par processus : soleil, éclaircies ou nuages.</p></li>
-      <li class="annotation-comment"><span>5</span><h2>Les commentaires</h2><p>Je précise mon ressenti et explique les difficultés rencontrées dans l’activité.</p></li>
+      <li class="annotation-period"><span>1</span><h2>Ma caisse,<br />ma période</h2><p>La période ouverte</p></li>
+      <li class="annotation-incidents"><span>2</span><h2>Incidents vécus</h2><p>Je sélectionne et qualifie</p></li>
+      <li class="annotation-day"><span>3</span><h2>Ressenti du jour</h2><p>Une météo quotidienne</p></li>
+      <li class="annotation-process"><span>4</span><h2>Météo métier</h2><p>Par processus</p></li>
+      <li class="annotation-comment"><span>5</span><h2>Commentaires</h2><p>Préciser le ressenti</p></li>
     </ol>
     ${footer(11)}
   `,
