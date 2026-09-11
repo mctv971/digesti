@@ -39,24 +39,26 @@ export const slideArchitecture = {
       const target = `translateX(${(cards.length - count) * stride / 2}px)`;
       const previousTransforms = cards.map(card => card.style.transform || 'translateX(0px)');
       cards.forEach((card, i) => {
-        card.hidden = i >= count;
-        card.style.zIndex = i === count - 1 ? '2' : '1';
-        if (!animate) card.style.transform = target;
+        card.hidden = i >= count || (animate && i === count - 1);
+        card.style.transform = target;
       });
       el.querySelector('.architecture-intro').hidden = count !== 0;
       takeaway.hidden = count !== cards.length;
       if (!count || !animate) return;
+      // Libérer la place avant de révéler le nouveau bloc à sa position finale.
+      if (count > 1) {
+        const shifted = await Promise.all(cards.slice(0, count - 1).map((card, i) => play(card, [
+          { transform: previousTransforms[i] },
+          { transform: target },
+        ], { duration: 300 })));
+        if (shifted.some(finished => !finished)) return;
+      }
       const incoming = cards[count - 1];
-      const center = `translateX(${(3 - count) * stride}px)`;
-      // Entrée brève au centre, puis répartition de la rangée en une demi-seconde.
-      incoming.style.transform = center;
-      if (!await play(incoming, [{ opacity: 0, transform: `${center} translateY(16px)` }, { opacity: 1, transform: center }], { duration: 200 })) return;
-      cards.slice(0, count).forEach(card => { card.style.transform = target; });
-      if (count === 1) return;
-      await Promise.all(cards.slice(0, count).map((card, i) => play(card, [
-        { transform: i === count - 1 ? center : previousTransforms[i] },
-        { transform: target },
-      ], { duration: 300 })));
+      incoming.hidden = false;
+      await play(incoming, [
+        { opacity: 0, transform: `${target} translateY(16px)` },
+        { opacity: 1, transform: target },
+      ], { duration: 200 });
     });
   },
   exit() { cleanup?.(); },
