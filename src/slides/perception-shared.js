@@ -1,7 +1,7 @@
 import perceptionLogo from '../../SOURCE/logoPerception.svg?url';
 import './perception.css';
 
-// Les deux démonstrations partagent les mêmes captures et le même cadrage.
+// Captures locales de Perception+ et cadrage de la démonstration de visualisation.
 const screens = import.meta.glob('../../SOURCE/screenPerception/*.png', { eager: true, query: '?url', import: 'default' });
 export const perceptionAsset = (file) => screens[`../../SOURCE/screenPerception/${file}`];
 export const perceptionBrand = () => `<img class="perception-brand" src="${perceptionLogo}" alt="Perception+" />`;

@@ -30,7 +30,7 @@ export function createDeck(stage, slides) {
     element.remove();
   }
 
-  function enter() {
+  function enter(entryStep = 0) {
     const slide = slides[index];
     element = document.createElement('section');
     element.id = slide.id;
@@ -39,7 +39,7 @@ export function createDeck(stage, slides) {
     element.innerHTML = slide.render() + compass();
     stage.append(element);
     // Le DOM est recréé à chaque entrée pour repartir d'un état propre.
-    context = { element, reducedMotion: motion.matches, next, prev };
+    context = { element, reducedMotion: motion.matches, next, prev, entryStep };
     slide.enter?.(context);
     cleanupCompass = animateCompass(element, motion.matches);
     setupPagination();
@@ -78,13 +78,13 @@ export function createDeck(stage, slides) {
     }, options);
   }
 
-  function goTo(target) {
+  function goTo(target, { entryStep = 0 } = {}) {
     if (!Number.isInteger(target)) return;
     const nextIndex = Math.max(0, Math.min(target, slides.length - 1));
     if (nextIndex !== index) {
       leave();
       index = nextIndex;
-      enter();
+      enter(entryStep);
     }
     syncHash();
   }
@@ -112,7 +112,7 @@ export function createDeck(stage, slides) {
   }
 
   function prev() {
-    if (!context.prevStep?.()) goTo(index - 1);
+    if (!context.prevStep?.()) goTo(index - 1, { entryStep: 'last' });
   }
 
   function onHashChange() {

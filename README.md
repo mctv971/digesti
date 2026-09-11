@@ -10,7 +10,8 @@ npm run dev
 ## Présenter
 
 - **Flèche droite / Espace** : étape suivante, puis slide suivante.
-- **Flèche gauche** : étape précédente, puis slide précédente.
+- **Flèche gauche** : étape précédente ; à la première étape, retour à la dernière
+  étape de la slide précédente, sans rejouer ses animations d’introduction.
 - **Home / End** : première / dernière slide.
 - Les boutons en bas des slides permettent la même navigation à la souris.
 - Le numéro de slide dans la pagination est saisissable : entrer un numéro et
@@ -60,12 +61,13 @@ La slide 9 conserve uniquement la vue des traitements BAR.
 Les trois slides Perception+ sont dans `slide-perception-intro.js`,
 `slide-perception-entry.js` et `slide-perception-review.js`. Elles partagent
 `perception.css` et quelques helpers locaux dans `perception-shared.js`.
-La slide 10 présente les deux regards sur la qualité, le rythme hebdomadaire,
-les retours Excel puis les ateliers avec trois caisses (quatre étapes).
-La slide 11 parcourt la saisie, les incidents, leur qualification et le ressenti
-(sept étapes). La slide 12 parcourt la carte, le détail d’une caisse et les
-bénéfices (cinq étapes). Tous les changements et zooms sont manuels.
-Le crayon P1, la ligne d’incident et la région mise en évidence sont cliquables.
+La slide 10 présente les deux regards sur la qualité puis les ateliers avec trois
+caisses (deux étapes). La slide 11 affiche uniquement l’écran principal de saisie,
+avec cinq annotations fixes et leurs flèches, sans interaction dans la capture.
+La slide 12 parcourt la carte, le détail d’une caisse et les bénéfices (quatre étapes).
+Un seul clic sur la région ou sur Suivant déclenche le survol animé, un bref arrêt
+sur la région, puis l’ouverture de la synthèse. Le mode de mouvements réduits
+ouvre directement la synthèse. Les autres changements et zooms restent manuels.
 Ces démonstrations utilisent les captures fournies et ne modifient aucune donnée.
 La capture finale affiche GGE malgré son nom de fichier `5_perception_visu_gne.png` ;
 elle est conservée telle quelle et présentée comme un exemple de caisse.
@@ -74,8 +76,9 @@ Le formulaire de notifications est une simulation locale de démonstration.
 Ses modifications n'appellent aucun service QIS et ne sont pas persistées.
 Un retour sur la slide réinitialise l'exemple.
 
-Sur la slide architecture, chaque clic révèle une étape du projet au centre, puis
-répartit les blocs déjà présents. Les icônes Microsoft sont stockées localement
+Sur la slide architecture, aucun bloc n’est affiché initialement. Le premier clic
+révèle Comprendre au centre en 200 ms ; les clics suivants ajoutent chaque étape
+et répartissent les blocs en 500 ms au total. Les icônes Microsoft sont stockées localement
 dans `public/assets/microsoft/`, avec leurs sources dans `SOURCES.md`.
 
 La timeline (`slide-trajectory.js` et son CSS) conserve les sept jalons de la

@@ -13,6 +13,7 @@ const paths = {
   weather: '<path d="M9 25a7 7 0 1 1 1-14 9 9 0 0 1 17 4 5 5 0 0 1-1 10Z"/><path d="M7 3v3M1 8l3 2M18 3l-2 3"/>',
   bell: '<path d="M5 23h22l-3-5v-6a8 8 0 0 0-16 0v6ZM12 27a4 4 0 0 0 8 0"/>',
   check: '<path d="m6 16 7 7L27 8"/>',
+  'cloud-check': '<path d="M9 26a7 7 0 0 1-.8-13.9A8.5 8.5 0 0 1 25 14.7 5.7 5.7 0 0 1 24.3 26Z"/><path d="m11 18.5 3.5 3.5 6.5-6.5"/>',
   arrow: '<path d="M5 16h22M19 8l8 8-8 8"/>',
   branch: '<rect x="11" y="3" width="10" height="8" rx="2"/><path d="M16 11v7M6 23v-5h20v5"/><rect x="2" y="23" width="8" height="6" rx="1"/><rect x="22" y="23" width="8" height="6" rx="1"/>',
 };
@@ -111,7 +112,7 @@ export function presentSteps(context, labels, render) {
     return true;
   }
 
-  function show(target, animate) {
+  function show(target, animate, instant = false) {
     cancel();
     const current = ++generation;
     const previous = step;
@@ -121,7 +122,8 @@ export function presentSteps(context, labels, render) {
     nextButton.innerHTML = `${labels[step]} ${icon('arrow')}`;
     busy = true;
     element.setAttribute('aria-busy', 'true');
-    Promise.resolve(render({ step, previous, animate: animate && !reducedMotion, play, cursor }))
+    const immediate = async () => true;
+    Promise.resolve(render({ step, previous, animate: animate && !reducedMotion, play: instant ? immediate : play, cursor: instant ? immediate : cursor }))
       .catch((error) => { if (!disposed) console.error(error); })
       .finally(() => {
         if (current !== generation || disposed) return;
@@ -143,8 +145,10 @@ export function presentSteps(context, labels, render) {
   };
   element.querySelector('[data-next]').addEventListener('click', context.next, { signal: events.signal });
   element.querySelector('[data-prev]').addEventListener('click', context.prev, { signal: events.signal });
-  show(0, false);
-  play(element.querySelector('.slide-heading'), [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'translateY(0)' }]);
+  // En reculant depuis la slide suivante, on retrouve son dernier état complet.
+  const fromEnd = context.entryStep === 'last';
+  show(fromEnd ? labels.length - 1 : 0, false, fromEnd);
+  if (!fromEnd) play(element.querySelector('.slide-heading'), [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'translateY(0)' }]);
 
   return () => {
     disposed = true;

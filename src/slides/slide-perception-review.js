@@ -27,14 +27,19 @@ export const slidePerceptionReview = {
     el.querySelector('.perception-hotspot').addEventListener('click', context.next, { signal: events.signal });
     el.querySelector('.subscriber-label').textContent = 'Périodes clôturées';
     const states = [
-      { file: map, alt: mapAlt, hotspot: [40.5, 35, 8.5, 18, 'Explorer la région sur la carte'], title: 'Une période close.<br />Une vue d’ensemble.', text: 'Une fois clôturée, la période rejoint l’historique. La carte récapitule le ressenti des caisses pour la période choisie.', note: '<strong>Du collectif au détail</strong><br />La carte est interactive : chaque région donne accès au retour d’une caisse.' },
-      { file: hover, alt: 'La région nord-est est mise en évidence sur la carte interactive.', zoom: [1.22, 11, 15], hotspot: [40.5, 35, 8.5, 18, 'Ouvrir la synthèse de la caisse'], click: [.442, .433], title: 'Une région.<br />Un accès au détail.', text: 'Le survol met la région en évidence. Un clic ouvre la synthèse de la caisse pour cette période.', note: '<strong>Une navigation directe</strong><br />De la météo globale aux informations saisies par l’entité.' },
-      { file: detail, alt: detailAlt, click: [.442, .433], title: 'La semaine,<br />dans son contexte.', text: 'Le détail réunit le ressenti global, les météos quotidiennes, les incidents, les processus et les commentaires.', note: '<strong>Période clôturée</strong><br />Les saisies sont verrouillées et restent consultables.' },
+      { file: map, alt: mapAlt, hotspot: [40.5, 35, 8.5, 18, 'Ouvrir la synthèse de la caisse'], title: 'Une période close.<br />Une vue d’ensemble.', text: 'Une fois clôturée, la période rejoint l’historique. La carte récapitule le ressenti des caisses pour la période choisie.', note: '<strong>Du collectif au détail</strong><br />La carte est interactive : chaque région donne accès au retour d’une caisse.' },
+      { file: detail, alt: detailAlt, title: 'La semaine,<br />dans son contexte.', text: 'Le détail réunit le ressenti global, les météos quotidiennes, les incidents, les processus et les commentaires.', note: '<strong>Période clôturée</strong><br />Les saisies sont verrouillées et restent consultables.' },
       { file: detail, alt: detailAlt, zoom: [1.2, 16, 16], title: 'Comprendre ce qui<br />a marqué l’activité.', text: 'Les incidents et les commentaires donnent du contexte aux météos. Ils permettent de préparer un échange concret avec la caisse.', note: '<strong>Un support aux points réguliers</strong><br />Retrouver les difficultés et les mettre en discussion avec l’entité.' },
     ];
-    const dispose = presentSteps(context, ['Explorer la carte', 'Ouvrir la synthèse', 'Lire les détails', 'Ce que cela nous apporte', 'Voir la trajectoire'], async ({ step, animate, cursor, play }) => {
-      const summary = step === 4;
-      if (!summary && animate && states[step].click && !await pointAtPerception(el, cursor, ...states[step].click, step === 2)) return;
+    const dispose = presentSteps(context, ['Ouvrir la synthèse', 'Lire les détails', 'Ce que cela nous apporte', 'Voir la trajectoire'], async ({ step, animate, cursor, play }) => {
+      const summary = step === 3;
+      // Un seul clic lance le survol, son agrandissement, puis l’ouverture.
+      if (step === 1 && animate) {
+        if (!await pointAtPerception(el, cursor, .442, .433, false)) return;
+        if (!await showPerceptionScreen(el, { file: hover, alt: 'La région nord-est est mise en évidence sur la carte.', zoom: [1.22, 11, 15] }, true, play)) return;
+        if (!await play(el.querySelector('.perception-canvas'), [{ opacity: 1 }, { opacity: 1 }], { duration: 450 })) return;
+        if (!await pointAtPerception(el, cursor, .442, .433)) return;
+      }
       el.querySelector('.laptop').hidden = summary;
       el.querySelector('.demo-copy').hidden = summary;
       el.querySelector('.perception-principle').hidden = summary;

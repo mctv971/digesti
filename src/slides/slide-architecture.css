@@ -7,6 +7,8 @@
 #slide-architecture .technology h3 { margin: 0 0 4px; font-size: 23px; font-weight: 650; }
 #slide-architecture .technology p { margin: 0; color: var(--muted); font-size: 20px; line-height: 1.25; }
 #slide-architecture .architecture-method { position: absolute; left: 88px; right: 88px; top: 386px; }
+#slide-architecture .architecture-intro { position: absolute; top: 210px; left: 0; right: 0; text-align: center; font-size: 29px; color: var(--muted); }
+#slide-architecture .architecture-intro[hidden] { display: none; }
 #slide-architecture .project-steps { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; list-style: none; padding: 0; margin: 34px 0 0; }
 #slide-architecture .project-step { position: relative; height: 458px; padding: 39px 19px 20px; border: 1px solid var(--line); border-radius: 14px; background: white; box-shadow: 0 6px 14px #183d3306; }
 #slide-architecture .project-number { position: absolute; top: -23px; left: calc(50% - 23px); display: grid; place-items: center; width: 46px; height: 46px; border: 5px solid #f5f6f2; border-radius: 50%; background: var(--green); color: white; font-size: 22px; font-weight: 650; }
